@@ -1,0 +1,97 @@
+﻿Atividade da empresa ;Regra;Cod.;Status
+Escritorio ADM;Fabrica;Escritorio ADMFabrica;Verificar
+Escritorio ADM;Comercio;Escritorio ADMComércio;Verificar
+Escritorio ADM;Indiferente;Escritorio ADMIndiferente;OK
+Escritorio ADM;ZFM ou ALC Fabrica/ind;Escritorio ADMZFM ou ALC Fábrica/ind;Verificar
+Escritorio ADM;ZFM ou ALC Comecio;Escritorio ADMZFM ou ALC Comécio;Verificar
+Escritorio ADM;;Escritorio ADMNA;Verificar
+Escritorio ADM;Exportacao;Escritorio ADMExportação;Verificar
+Escritorio ADM;Operacao de ICMS;Escritorio ADMOperação de ICMS;Verificar
+Escritorio ADM;armazem geral;Escritorio ADMarmazém geral;Verificar
+Escritorio ADM;vasilhame ou sacaria;Escritorio ADMvasilhame ou sacaria;Verificar
+Escritorio ADM;Amostra;Escritorio ADMAmostra;Verificar
+Escritorio ADM;demonstracao;Escritorio ADMdemonstração;Verificar
+Fabrica;Fabrica;FabricaFabrica;OK
+Fabrica;Comercio;FabricaComércio;Verificar
+Fabrica;Indiferente;FabricaIndiferente;OK
+Fabrica;ZFM ou ALC Fabrica/ind;FabricaZFM ou ALC Fábrica/ind;OK
+Fabrica;ZFM ou ALC Comecio;FabricaZFM ou ALC Comécio;Verificar
+Fabrica;;FabricaNA;Verificar
+Fabrica;Exportacao;FabricaExportação;OK
+Fabrica;Operacao de ICMS;FabricaOperação de ICMS;OK
+Fabrica;armazem geral;Fabricaarmazém geral;OK
+Fabrica;vasilhame ou sacaria;Fabricavasilhame ou sacaria;OK
+Fabrica;Amostra;FabricaAmostra;OK
+Fabrica;demonstracao;Fabricademonstração;OK
+Estacao experimental;Fabrica;Estacao experimentalFabrica;Verificar
+Estacao experimental;Comercio;Estacao experimentalComércio;Verificar
+Estacao experimental;Indiferente;Estacao experimentalIndiferente;OK
+Estacao experimental;ZFM ou ALC Fabrica/ind;Estacao experimentalZFM ou ALC Fábrica/ind;Verificar
+Estacao experimental;ZFM ou ALC Comecio;Estacao experimentalZFM ou ALC Comécio;Verificar
+Estacao experimental;;Estacao experimentalNA;Verificar
+Estacao experimental;Exportacao;Estacao experimentalExportação;OK
+Estacao experimental;Operacao de ICMS;Estacao experimentalOperação de ICMS;Verificar
+Estacao experimental;armazem geral;Estacao experimentalarmazém geral;OK
+Estacao experimental;vasilhame ou sacaria;Estacao experimentalvasilhame ou sacaria;Verificar
+Estacao experimental;Amostra;Estacao experimentalAmostra;OK
+Estacao experimental;demonstracao;Estacao experimentaldemonstração;OK
+Comercio Atacadista;Fabrica;Comercio AtacadistaFabrica;Verificar
+Comercio Atacadista;Comercio;Comercio AtacadistaComércio;OK
+Comercio Atacadista;Indiferente;Comercio AtacadistaIndiferente;OK
+Comercio Atacadista;ZFM ou ALC Fabrica/ind;Comercio AtacadistaZFM ou ALC Fábrica/ind;Verificar
+Comercio Atacadista;ZFM ou ALC Comecio;Comercio AtacadistaZFM ou ALC Comécio;OK
+Comercio Atacadista;;Comercio AtacadistaNA;OK
+Comercio Atacadista;Exportacao;Comercio AtacadistaExportação;OK
+Comercio Atacadista;Operacao de ICMS;Comercio AtacadistaOperação de ICMS;OK
+Comercio Atacadista;armazem geral;Comercio Atacadistaarmazém geral;OK
+Comercio Atacadista;vasilhame ou sacaria;Comercio Atacadistavasilhame ou sacaria;OK
+Comercio Atacadista;Amostra;Comercio AtacadistaAmostra;OK
+Comercio Atacadista;demonstracao;Comercio Atacadistademonstração;OK
+CD;Fabrica;CDFabrica;Verificar
+CD;Comercio;CDComércio;Verificar
+CD;Indiferente;CDIndiferente;OK
+CD;ZFM ou ALC Fabrica/ind;CDZFM ou ALC Fábrica/ind;Verificar
+CD;ZFM ou ALC Comecio;CDZFM ou ALC Comécio;OK
+CD;;CDNA;Verificar
+CD;Exportacao;CDExportação;OK
+CD;Operacao de ICMS;CDOperação de ICMS;OK
+CD;armazem geral;CDarmazém geral;OK
+CD;vasilhame ou sacaria;CDvasilhame ou sacaria;OK
+CD;Amostra;CDAmostra;OK
+CD;demonstracao;CDdemonstração;OK
+Loja ;Fabrica;Loja Fabrica;Verificar
+Loja ;Comercio;Loja Comércio;OK
+Loja ;Indiferente;Loja Indiferente;OK
+Loja ;ZFM ou ALC Fabrica/ind;Loja ZFM ou ALC Fábrica/ind;Verificar
+Loja ;ZFM ou ALC Comecio;Loja ZFM ou ALC Comécio;OK
+Loja ;;Loja NA;Verificar
+Loja ;Exportacao;Loja Exportação;Verificar
+Loja ;Operacao de ICMS;Loja Operação de ICMS;OK
+Loja ;armazem geral;Loja armazém geral;Verificar
+Loja ;vasilhame ou sacaria;Loja vasilhame ou sacaria;OK
+Loja ;Amostra;Loja Amostra;OK
+Loja ;demonstracao;Loja demonstração;OK
+Beneficiamento;Fabrica;BeneficiamentoFabrica;Verificar
+Beneficiamento;Comercio;BeneficiamentoComércio;Verificar
+Beneficiamento;Indiferente;BeneficiamentoIndiferente;OK
+Beneficiamento;ZFM ou ALC Fabrica/ind;BeneficiamentoZFM ou ALC Fábrica/ind;Verificar
+Beneficiamento;ZFM ou ALC Comecio;BeneficiamentoZFM ou ALC Comécio;OK
+Beneficiamento;;BeneficiamentoNA;Verificar
+Beneficiamento;Exportacao;BeneficiamentoExportação;OK
+Beneficiamento;Operacao de ICMS;BeneficiamentoOperação de ICMS;OK
+Beneficiamento;armazem geral;Beneficiamentoarmazém geral;OK
+Beneficiamento;vasilhame ou sacaria;Beneficiamentovasilhame ou sacaria;OK
+Beneficiamento;Amostra;BeneficiamentoAmostra;OK
+Beneficiamento;demonstracao;Beneficiamentodemonstração;OK
+Laboratorio;Fabrica;LaboratorioFabrica;Verificar
+Laboratorio;Comercio;LaboratorioComércio;Verificar
+Laboratorio;Indiferente;LaboratorioIndiferente;OK
+Laboratorio;ZFM ou ALC Fabrica/ind;LaboratorioZFM ou ALC Fábrica/ind;Verificar
+Laboratorio;ZFM ou ALC Comecio;LaboratorioZFM ou ALC Comécio;Verificar
+Laboratorio;;LaboratorioNA;Verificar
+Laboratorio;Exportacao;LaboratorioExportação;OK
+Laboratorio;Operacao de ICMS;LaboratorioOperação de ICMS;Verificar
+Laboratorio;armazem geral;Laboratorioarmazém geral;OK
+Laboratorio;vasilhame ou sacaria;Laboratoriovasilhame ou sacaria;Verificar
+Laboratorio;Amostra;LaboratorioAmostra;OK
+Laboratorio;demonstracao;Laboratoriodemonstração;OK

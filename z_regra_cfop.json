@@ -1,0 +1,106 @@
+{
+    header: {
+        title: "Regras de CFOP",
+        button: "add",
+        onButtonClick: function(){
+        	this.cws({
+                data: {
+                    method: "getUploadFormHtml"
+                },
+                success: function(r){
+                    this.upload.html.set("html", base64.decode(r.iframe));
+                    this.upload.open();
+                }
+            });
+        }
+    },
+
+    body: {
+        grid: {
+            type: "dataTable",
+            rowLoader: function(p) {
+                this.cws({
+                    data: {
+                    	method: "getDadosGrid",
+                        z_regra_cfop: this.filtro.values()
+                    },
+                    success: function(r) {
+						this.grid.set("rows", r.rows);
+                    }
+                });
+            },
+            columns: {
+
+                grupo_cfop: {title:"Grupo CFOP", "width":250},
+				cfop: {title:"CFOP", "width":80},
+				descricao_cfop: {title:"Descrição CFOP", "width":300},
+				saida_entrada: {title:"Saída/Entrada", "width":120},
+				grupo: {title:"Grupo", "width":180},
+				regra: {title:"Regra", "width":120}
+            }
+        }
+    },
+
+    modals: {
+		upload: {
+        	body: {
+            	html: {
+                	type:"htmlPanel"
+				}
+			},
+		 footer: {
+         	close: {
+            	type:"button",
+				title:"Close",
+				onClick: function(){
+						this.upload.close();
+					}
+				}
+			}
+		}
+    },
+
+    rightPanels: {
+        filtro: {
+            image: media("logo", "img/office.jpg"),
+            body: {
+                filtrar: {
+                    type: "button",
+                    title: "Filtrar",
+                    css: {
+                        "width": "100%"
+                    },
+                    onClick: function() {
+                        this.grid.loadRows();
+                        this.filtro.close();
+                    }
+                },
+                download: {
+                    type: "button",
+                    css: {
+                        "width": "100%"
+                    },
+                    title: "Baixar",
+                    onClick: function() {
+                        this.cws({
+                        	data: {
+                            	method: "downloadDadosGrid"
+							},
+							success: function(r){
+								if(r.file_token){
+									downloadFile(r.file_token);
+								}
+							}
+						});
+                    }
+                }
+            }
+        }
+    },
+
+   class: "z_regra_cfop",
+   onLoad:
+   		function() {
+        	this.grid.loadRows({});
+    	}
+}

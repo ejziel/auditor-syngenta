@@ -1,0 +1,117 @@
+{
+    header: {
+        title: "Regras de tributacao",
+        button: "add",
+        onButtonClick: function(){
+        	this.cws({
+                data: {
+                    method: "getUploadFormHtml"
+                },
+                success: function(r){
+                    this.upload.html.set("html", base64.decode(r.iframe));
+                    this.upload.open();
+                }
+            });
+        }
+    },
+
+    body: {
+        grid: {
+            type: "dataTable",
+            rowLoader: function(p) {
+                this.cws({
+                    data: {
+                    	method: "getDadosGrid",
+                        z_regra_tributacao: this.filtro.values()
+                    },
+                    success: function(r) {
+						this.grid.set("rows", r.rows);
+                    }
+                });
+            },
+            columns: {
+			
+                procurement_type: {title:"procurement_type", "width":120},
+				material_usage: {title:"material_usage", "width":120},
+				produced_in_house: {title:"produced_in_house", "width":120},
+				plant: {title:"plant", "width":120},
+				country_origin: {title:"country_origin", "width":120},
+				material_origin: {title:"material_origin", "width":120},
+				control_code: {title:"control_code", "width":120},
+				material_group: {title:"material_group", "width":120},
+				tax_classification: {title:"tax_classification", "width":120},
+				material_cfop_category: {title:"mat. cfop cat.", "width":120},
+				external_material_group: {title:"ext. mat. group", "width":120}
+            }
+        }
+    },
+
+    modals: {
+		upload: {
+        	body: {
+            	html: {
+                	type:"htmlPanel"
+				}
+			},
+		 footer: {
+         	close: {
+            	type:"button",
+				title:"Close",
+				onClick: function(){
+						this.upload.close();
+					}
+				}
+			}
+		}
+    },
+
+    rightPanels: {
+        filtro: {
+            image: media("logo", "img/office.jpg"),
+            body: {
+            	/*federal_id: {
+                    title: "CNPJ"
+                },
+                simples: {
+                    title: "Simples Nacional"
+                },*/
+                filtrar: {
+                    type: "button",
+                    title: "Filtrar",
+                    css: {
+                        "width": "100%"
+                    },
+                    onClick: function() {
+                        this.grid.loadRows();
+                        this.filtro.close();
+                    }
+                },
+                download: {
+                    type: "button",
+                    css: {
+                        "width": "100%"
+                    },
+                    title: "Baixar",
+                    onClick: function() {
+                        this.cws({
+                        	data: {
+                            	method: "downloadDadosGrid"
+							},
+							success: function(r){
+								if(r.file_token){
+									downloadFile(r.file_token);
+								}
+							}
+						});
+                    }
+                }
+            }
+        }
+    },
+
+   class: "z_regra_tributacao",
+   onLoad: 
+   		function() {
+        	this.grid.loadRows({});
+    	}
+}

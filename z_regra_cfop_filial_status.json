@@ -1,0 +1,104 @@
+{
+    header: {
+        title: "Regras de CFOP Filial Status",
+        button: "add",
+        onButtonClick: function(){
+        	this.cws({
+                data: {
+                    method: "getUploadFormHtml"
+                },
+                success: function(r){
+                    this.upload.html.set("html", base64.decode(r.iframe));
+                    this.upload.open();
+                }
+            });
+        }
+    },
+
+    body: {
+        grid: {
+            type: "dataTable",
+            rowLoader: function(p) {
+                this.cws({
+                    data: {
+                    	method: "getDadosGrid",
+                        z_regra_cfop_filial_status: this.filtro.values()
+                    },
+                    success: function(r) {
+						this.grid.set("rows", r.rows);
+                    }
+                });
+            },
+            columns: {
+
+                atividade_empresa: {title:"Atividade da Empresa", "width":200},
+				regra: {title:"Regra", "width":200},
+				codigo: {title:"Código", "width":250},
+				status: {title:"Status", "width":120}
+            }
+        }
+    },
+
+    modals: {
+		upload: {
+        	body: {
+            	html: {
+                	type:"htmlPanel"
+				}
+			},
+		 footer: {
+         	close: {
+            	type:"button",
+				title:"Close",
+				onClick: function(){
+						this.upload.close();
+					}
+				}
+			}
+		}
+    },
+
+    rightPanels: {
+        filtro: {
+            image: media("logo", "img/office.jpg"),
+            body: {
+                filtrar: {
+                    type: "button",
+                    title: "Filtrar",
+                    css: {
+                        "width": "100%"
+                    },
+                    onClick: function() {
+                        this.grid.loadRows();
+                        this.filtro.close();
+                    }
+                },
+                download: {
+                    type: "button",
+                    css: {
+                        "width": "100%"
+                    },
+                    title: "Baixar",
+                    onClick: function() {
+                        this.cws({
+                        	data: {
+                            	method: "downloadDadosGrid"
+							},
+							success: function(r){
+								if(r.file_token){
+									downloadFile(r.file_token);
+								}
+							}
+						});
+                    }
+                }
+            }
+        }
+    },
+
+   class: "z_regra_cfop_filial_status",
+   onLoad:
+   		function() {
+        	this.grid.loadRows({});
+    	}
+}
