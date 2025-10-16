@@ -29,12 +29,12 @@ from (
 			critica_4,
 			critica_5
   from   (
-          select 	#! A LOGICA DE 'ENTRADA' FOI MOVIDA PARA CA
+          select 	# A LOGICA DE 'ENTRADA' FOI MOVIDA PARA CA
 					case when sub.movimento = 'ENTRADA' and ifnull(credito_icms,1) = 0 and valor_icms  > 0 then '[ICMS]' else null end critica_1,
 					case when sub.movimento = 'ENTRADA' and ifnull(credito_ipi,1) = 0 and valor_ipi  > 0 then '[IPI]' else null end critica_2,
 					case when sub.movimento = 'ENTRADA' and ifnull(credito_pis,1) = 0 and valor_pis  > 0 then '[PIS]' else null end critica_3,
 					case when sub.movimento = 'ENTRADA' and ifnull(credito_cofins,1) = 0 and valor_cofins  > 0 then '[COFINS]' else null end critica_4,
-					#! Esta critica nao tem o filtro e sera aplicada a entradas e saidas
+					# Esta critica nao tem o filtro e sera aplicada a entradas e saidas
 					case when cfop_status = 'Verificar' then '[CFOP - Regra Filial]' else null end critica_5,
 					sub.*
           from   (
@@ -66,7 +66,7 @@ from (
                   inner join `org_90_7536cf.bq_company` cp on cast(cp.id as int64) = cast(b.company_id as int64)
                   left join  `org_90_7536cf.z_regra_cfop` rc on rc.cfop = lpad(trim(lf.COD_CFOP),4,'0')
                   left join  `org_90_7536cf.z_regra_cfop_filial_status` cfs on cfs.atividade_empresa = b.type and cfs.regra = rc.regra
-                  #! A CLAUSULA WHERE FOI REMOVIDA DAQUI
+                  #A CLAUSULA WHERE FOI REMOVIDA DAQUI
                   #! and FORMAT_DATE('%Y-%m-01',lf.DATA_FISCAL) = '%period%'
                 ) sub inner join
                 (	select code branch_code,
